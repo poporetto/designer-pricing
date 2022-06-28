@@ -139,12 +139,10 @@ const ServerPricing = () => {
         </div>
         <div className="pricing__slider-container">
           <p className="pricing__slider-description">
-            <Typography>
-              For{" "}
-              {renderUnlimitedTargetsChecked
-                ? ` unlimited deployment targets`
-                : " up to " + valueTargets + " deployment targets "}
-            </Typography>
+            For{" "}
+            {renderUnlimitedTargetsChecked
+              ? ` unlimited deployment targets`
+              : " up to " + valueTargets + " deployment targets "}
           </p>
           <div className="pricing__slider">
             {renderUnlimitedTargetsChecked ? null : (
@@ -174,7 +172,7 @@ const ServerPricing = () => {
         <a href="" className="btn btn-lg btn-success">
           Start a trial
         </a>
-        <img src="%PUBLIC_URL%/octopus.svg" className="octopus octopus--caught" alt="Octopus Floating Around"/>
+        <img src="octopus.svg" className="octopus octopus--caught" alt="Octopus Floating Around"/>
       </div>
     </>
   );
