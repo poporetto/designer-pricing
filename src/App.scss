@@ -127,48 +127,6 @@ body {
     }
   }
 
-  &__item {
-    padding: 3rem;
-    background: $color-primary-light;
-    text-align: center;
-    color: $color-primary;
-
-
-    &--primary {
-      position: relative;
-      background: $color-primary;
-      color: $color-mono-lightest;
-
-      .MuiInputBase-input {
-        color: $color-mono-lightest;
-      }
-
-
-      &::after {
-        display: block;
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        bottom: -3rem;
-        height: 3rem;
-        background: linear-gradient(to top left, transparent 0%, transparent 50%, $color-primary 50%, $color-primary 100%);
-      }
-    }
-
-    &--secondary {
-      padding-top: 4rem;
-
-      .MuiInputBase-input {
-        color: $color-primary;
-      }
-      
-      .MuiSlider-track {
-        background: $color-primary;
-      }
-    }
-  }
-
   &__term {
     text-align: left;
   }
@@ -219,6 +177,52 @@ body {
     }
   }
 
+  &__item {
+    padding: 3rem;
+    background: $color-primary-light;
+    text-align: center;
+    color: $color-primary;
+
+
+    &--primary {
+      position: relative;
+      background: $color-primary;
+      color: $color-mono-lightest;
+
+      .MuiInputBase-input {
+        color: $color-mono-lightest;
+      }
+
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: -3rem;
+        height: 3rem;
+        background: linear-gradient(to top left, transparent 0%, transparent 50%, $color-primary 50%, $color-primary 100%);
+      }
+    }
+
+    &--secondary {
+      padding-top: 4rem;
+
+      .MuiInputBase-input {
+        color: $color-primary;
+      }
+      
+      .MuiSlider-track {
+        background: $color-primary;
+      }
+
+      .MuiSlider-thumb {
+        background: $color-primary;
+      }      
+    }
+  }
+  
   @media (min-width: $media-sm) {
     grid-template-columns: 1fr 1fr;
 
