@@ -139,6 +139,10 @@ body {
       background: $color-primary;
       color: $color-mono-lightest;
 
+      .MuiInputBase-input {
+        color: $color-mono-lightest;
+      }
+
 
       &::after {
         display: block;
@@ -154,6 +158,10 @@ body {
 
     &--secondary {
       padding-top: 4rem;
+
+      .MuiInputBase-input {
+        color: $color-primary;
+      }
       
       .MuiSlider-track {
         background: $color-primary;
@@ -167,8 +175,8 @@ body {
 
   &__slider {
     display: grid;
-    grid-template-columns: 9fr 1fr;
-    grid-gap: 1rem;    
+    grid-template-columns: 18fr 2fr;
+    grid-gap: 1rem;
 
     .MuiSlider-thumb {
       width: 2rem;
@@ -191,6 +199,15 @@ body {
       border-radius: 1rem;
       opacity: 1;
       background: $color-primary-dark;
+    }
+
+    .MuiInput-underline::before {
+      border-bottom: none;
+    }
+
+    .MuiInputBase-root {
+      width: 100%;
+      padding-top: 0.5rem;
     }
 
     &-container {

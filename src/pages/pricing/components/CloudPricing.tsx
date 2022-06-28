@@ -187,6 +187,22 @@ const CloudPricing = () => {
               min={100}
               max={10000}
             />
+            <Input
+              className={classes.input}
+              value={valueMinutes}
+              margin="dense"
+              onChange={(e) =>
+                setValidMinutes(parseInt(e.target.value, 10))
+              }
+              onBlur={handleBlurMinutes}
+              inputProps={{
+                step: 10,
+                min: 100,
+                max: 10000,
+                type: "number",
+                "aria-labelledby": "input-slider-minutes",
+              }}
+            />
           </div>
         </div>        
         <p className="pricing__term">

@@ -144,8 +144,8 @@ const ServerPricing = () => {
               ? ` unlimited deployment targets`
               : " up to " + valueTargets + " deployment targets "}
           </p>
-          <div className="pricing__slider">
-            {renderUnlimitedTargetsChecked ? null : (
+          {renderUnlimitedTargetsChecked ? null : (
+            <div className="pricing__slider">
               <Slider
                 value={valueTargets}
                 onChange={handleSliderChange}
@@ -153,8 +153,24 @@ const ServerPricing = () => {
                 min={10}
                 max={2000}
               />
-            )}
-          </div>
+              <Input
+                className={classes.input}
+                value={valueTargets}
+                margin="dense"
+                onChange={(e) =>
+                  updateUserTargets(parseInt(e.target.value, 10))
+                }
+                onBlur={handleBlur}
+                inputProps={{
+                  step: 10,
+                  min: 10,
+                  max: 2000,
+                  type: "number",
+                  "aria-labelledby": "input-slider",
+                }}
+              />
+            </div>
+          )}
         </div>
         <FormControlLabel
           control={
