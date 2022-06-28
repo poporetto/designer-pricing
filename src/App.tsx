@@ -5,12 +5,10 @@ import Server from "./pages/pricing/components/ServerPricing";
 
 function App() {
   return (
-    <div style={{ margin: "0px" }}>
-      <div>
-        <Cloud />
-        <Server />
-      </div>
-    </div>
+    <article className="pricing">
+      <Cloud />
+      <Server />
+    </article>
   );
 }
 
