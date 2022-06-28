@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { Box, Grid, Input, Slider, Typography } from "@material-ui/core";
+import { Input, Slider} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { formatCcy, handleInvalidValue } from "../../../utils";
 
@@ -132,98 +132,87 @@ const CloudPricing = () => {
 
   return (
     <>
-      <Box>
-        <h2>Cloud</h2>
-        <p>
-          <span>
-            {formatCcy(totalPrice)}
-            <sup>*</sup>
-          </span>
-          <span> / Month</span>
-        </p>
-        <p>
-          High availability feature included in plan with more than 100
-          deployment
-        </p>
-
-        <Grid item>
-          <Typography>
+      <div className="pricing__item pricing__item--primary">
+        <h2 className="pricing__title">
+          Cloud
+        </h2>
+        <div className="pricing__price">
+          {formatCcy(totalPrice)}<sup>*</sup><span className="pricing__price-duration">/month</span>
+        </div>
+        <div className="pricing__slider-container">
+          <p className="pricing__slider-description">
             For{" "}
             {valueTargets <= FREE_TARGETS
               ? ` up to 10 deployment targets`
               : " up to " + valueTargets + " deployment targets "}
-          </Typography>
-
-          <div className={classes.root}>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item xs>
-                <Slider
-                  value={typeof valueTargets === "number" ? valueTargets : 0}
-                  onChange={handleSliderChange}
-                  aria-labelledby="input-slider"
-                  min={10}
-                  max={5000}
-                />
-              </Grid>
-              <Grid item>
-                <Input
-                  className={classes.input}
-                  value={valueTargets}
-                  margin="dense"
-                  onChange={(e) =>
-                    updateUserTargets(parseInt(e.target.value, 10))
-                  }
-                  onBlur={handleBlur}
-                  inputProps={{
-                    step: 10,
-                    min: 10,
-                    max: 5000,
-                    type: "number",
-                    "aria-labelledby": "input-slider",
-                  }}
-                />
-              </Grid>
-            </Grid>
+          </p>
+          <div className="pricing__slider">
+            <Slider
+              value={typeof valueTargets === "number" ? valueTargets : 0}
+              onChange={handleSliderChange}
+              aria-labelledby="input-slider"
+              min={10}
+              max={5000}
+            />
+            <Input
+              className={classes.input}
+              value={valueTargets}
+              margin="dense"
+              onChange={(e) =>
+                updateUserTargets(parseInt(e.target.value, 10))
+              }
+              onBlur={handleBlur}
+              inputProps={{
+                step: 10,
+                min: 10,
+                max: 5000,
+                type: "number",
+                "aria-labelledby": "input-slider",
+              }}
+            />            
           </div>
-          <div className={classes.root}>
-            <Typography>
-              For{" "}
-              {valueMinutes <= FREE_TARGETS
-                ? ` free deployment minutes `
-                : " " + valueMinutes + " deployment minutes "}
-            </Typography>
-            <Grid container spacing={2} alignItems="center">
-              <Grid item xs>
-                <Slider
-                  value={typeof valueMinutes === "number" ? valueMinutes : 0}
-                  onChange={handleSliderChangeMinutes}
-                  aria-labelledby="input-slider-minutes"
-                  min={100}
-                  max={10000}
-                />
-              </Grid>
-              <Grid item>
-                <Input
-                  className={classes.input}
-                  value={valueMinutes}
-                  margin="dense"
-                  onChange={(e) =>
-                    setValidMinutes(parseInt(e.target.value, 10))
-                  }
-                  onBlur={handleBlurMinutes}
-                  inputProps={{
-                    step: 10,
-                    min: 100,
-                    max: 10000,
-                    type: "number",
-                    "aria-labelledby": "input-slider-minutes",
-                  }}
-                />
-              </Grid>
-            </Grid>
+        </div>
+        <div className="pricing__slider-container">
+          <p className="pricing__slider-description">
+            For{" "}
+            {valueMinutes <= FREE_TARGETS
+              ? ` free deployment minutes `
+              : " " + valueMinutes + " deployment minutes "}
+          </p>
+          <div className="pricing__slider">
+            <Slider
+              value={typeof valueMinutes === "number" ? valueMinutes : 0}
+              onChange={handleSliderChangeMinutes}
+              aria-labelledby="input-slider-minutes"
+              min={100}
+              max={10000}
+            />
+            <Input
+              className={classes.input}
+              value={valueMinutes}
+              margin="dense"
+              onChange={(e) =>
+                setValidMinutes(parseInt(e.target.value, 10))
+              }
+              onBlur={handleBlurMinutes}
+              inputProps={{
+                step: 10,
+                min: 100,
+                max: 10000,
+                type: "number",
+                "aria-labelledby": "input-slider-minutes",
+              }}
+            />
           </div>
-        </Grid>
-      </Box>
+        </div>        
+        <p className="pricing__term">
+          High availability feature included in plan with more than 100 deployment
+        </p>          
+        <a href="" className="btn btn-lg btn-success">
+          Start a trial
+        </a>
+        <img src="octopus.svg" className="octopus octopus--floating" alt="Octopus Floating Around"/>
+      </div>
     </>
   );
 };

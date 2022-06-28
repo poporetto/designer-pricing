@@ -124,76 +124,72 @@ const ServerPricing = () => {
 
   return (
     <>
-      <Box>
-        <h2>Server</h2>
-        <p>
+      <div className="pricing__item pricing__item--secondary">
+        <h2 className="pricing__title">
+          Server
+        </h2>
+        <div className="pricing__price">
           <span>
             {renderUnlimitedTargetsChecked
               ? UNLIMITED_PRICE
               : formatCcy(totalPrice)}
             <sup>*</sup>
           </span>
-          <span> / Month</span>
-        </p>
-        <p>
-          High availability feature included in plan with more than 100
-          deployment targets.
-        </p>
-
-        <Grid item>
-          <Typography>
+          <span className="pricing__price-duration">/month</span>
+        </div>
+        <div className="pricing__slider-container">
+          <p className="pricing__slider-description">
             For{" "}
             {renderUnlimitedTargetsChecked
               ? ` unlimited deployment targets`
               : " up to " + valueTargets + " deployment targets "}
-          </Typography>
-
-          <div className={classes.root}>
-            {renderUnlimitedTargetsChecked ? null : (
-              <Grid container spacing={2} alignItems="center">
-                <Grid item xs>
-                  <Slider
-                    value={valueTargets}
-                    onChange={handleSliderChange}
-                    aria-labelledby="input-slider"
-                    min={10}
-                    max={2000}
-                  />
-                </Grid>
-
-                <Grid item>
-                  <Input
-                    className={classes.input}
-                    value={valueTargets}
-                    margin="dense"
-                    onChange={(e) =>
-                      updateUserTargets(parseInt(e.target.value, 10))
-                    }
-                    onBlur={handleBlur}
-                    inputProps={{
-                      step: 10,
-                      min: 10,
-                      max: 2000,
-                      type: "number",
-                      "aria-labelledby": "input-slider",
-                    }}
-                  />
-                </Grid>
-              </Grid>
-            )}
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={renderUnlimitedTargetsChecked}
-                  onChange={unlimitedTargetsCheck}
-                  name="unlimitedTargets"
-                />
-              }
-              label="Unlimited Targets"
+          </p>
+          {renderUnlimitedTargetsChecked ? null : (
+            <div className="pricing__slider">
+              <Slider
+                value={valueTargets}
+                onChange={handleSliderChange}
+                aria-labelledby="input-slider"
+                min={10}
+                max={2000}
+              />
+              <Input
+                className={classes.input}
+                value={valueTargets}
+                margin="dense"
+                onChange={(e) =>
+                  updateUserTargets(parseInt(e.target.value, 10))
+                }
+                onBlur={handleBlur}
+                inputProps={{
+                  step: 10,
+                  min: 10,
+                  max: 2000,
+                  type: "number",
+                  "aria-labelledby": "input-slider",
+                }}
+              />
+            </div>
+          )}
+        </div>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={renderUnlimitedTargetsChecked}
+              onChange={unlimitedTargetsCheck}
+              name="unlimitedTargets"
             />
-          </div>
-        </Grid>
-      </Box>
+          }
+          label="Unlimited Targets"
+        />
+        <p className="pricing__term">
+          High availability feature included in plan with more than 100 deployment targets.
+        </p>
+        <a href="" className="btn btn-lg btn-success">
+          Start a trial
+        </a>
+        <img src="octopus.svg" className="octopus octopus--caught" alt="Octopus Floating Around"/>
+      </div>
     </>
   );
 };
