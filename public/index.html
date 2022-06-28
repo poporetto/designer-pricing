@@ -24,16 +24,141 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha256-OFRAJNoaD8L3Br5lglV7VyLRf0itmoBzWUoM+Sji4/8=" crossorigin="anonymous"></script>
-    <title>React App</title>
+    <title>Pricing · Teams of any size - Octopus Deploy</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div class="container">
+      <nav class="navigation">
+        <a href="#" class="navigation__logo">
+          <img src="%PUBLIC_URL%/logo.svg" alt="Octopus deploy logo">
+        </a>
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="" class="navigation__link">
+              Features
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">
+              Pricing
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">
+              What's New
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">
+              Resources
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">
+              Blog
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">
+              Enterprise
+            </a>
+          </li>
+        </ul>
+        <div class="navigation__login">
+          <a href="" class="navigation__link">Sign in</a>
+          <a href="" class="btn btn-success">
+            Start a trial
+          </a>
+        </div>        
+      </nav>      
+    </div>
+
+    <div class="container">
+      <h1 class="page-title">
+        One product, two ways to host it
+      </h1>
+    </div>
+
+    <article class="pricing">
+      <div class="pricing__item pricing__item--primary">
+        <h2 class="pricing__title">
+          Cloud
+        </h2>
+        <div class="pricing__price">
+          $0.00<span class="pricing__price-duration">/month</span>
+        </div>
+        <div class="pricing__slider-container">
+          <p class="pricing__slider-description">
+            For up to 10 deployment targets 
+          </p>
+          <div class="pricing__slider">
+          </div>
+        </div>
+        <div class="pricing__slider-container">
+          <p class="pricing__slider-description">
+            For 100 deployment minutes
+          </p>
+          <div class="pricing__slider">
+          </div>
+        </div>        
+        <p class="pricing__term">
+          High availability feature included in plan with more than 100 deployment
+        </p>          
+        <a href="" class="btn btn-lg btn-success">
+          Start a trial
+        </a>
+        <img src="%PUBLIC_URL%/octopus.svg" class="octopus octopus--floating" alt="Octopus Floating Around">
+      </div>
+      <div class="pricing__item pricing__item--secondary">
+        <h2 class="pricing__title">
+          Server
+        </h2>
+        <div class="pricing__price">
+          $0.00<span class="pricing__price-duration">/month</span>
+        </div>
+        <div class="pricing__slider-container">
+          <p class="pricing__slider-description">
+            For up to 10 deployment targets 
+          </p>
+          <div class="pricing__slider">
+          </div>
+        </div>
+        <span class="">Unlimited targets</span>
+        <p class="pricing__term">
+          High availability feature included in plan with more than 100 deployment targets.
+        </p>
+        <a href="" class="btn btn-lg btn-success">
+          Start a trial
+        </a>
+        <img src="%PUBLIC_URL%/octopus.svg" class="octopus octopus--caught" alt="Octopus Floating Around">        
+      </div>
+    </article>
+
+    <div id="root">      
+    </div>
+
+    <div class="container">
+      <aside class="sales-upsell">
+        <div class="sales-upsell__content">
+          <h2 class="sales-upsell__title">
+            Unsure with your options?
+          </h2>
+          <p>
+            Our friendly sales team will be able to assist you with any enquiries.
+          </p>         
+        </div>
+        <a href="" class="btn btn-primary">
+          Contact Sales
+        </a>
+      </aside>      
+    </div>
+
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
